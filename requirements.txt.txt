@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+qdrant-client
+sentence-transformers
+rank-bm25
+scikit-learn
+pytesseract
+pymupdf
+Pillow
+langchain
+transformers
+torch
+pyngrok
+nest_asyncio
+python-multipart
+pydantic
