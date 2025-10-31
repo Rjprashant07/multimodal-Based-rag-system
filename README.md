@@ -23,6 +23,6 @@ app/
 
 ## 🛠 Installation
 ```bash
-git clone <your-repo-url>
+git clone <https://github.com/Rjprashant07/multimodal-Based-rag-system.git>
 cd app
 pip install -r requirements.txt
