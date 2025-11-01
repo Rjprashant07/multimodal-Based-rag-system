@@ -10,7 +10,6 @@ Pillow
 langchain
 transformers
 torch
-pyngrok
 nest_asyncio
 python-multipart
 pydantic
