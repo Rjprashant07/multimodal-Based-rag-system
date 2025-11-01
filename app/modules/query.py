@@ -7,11 +7,16 @@ from sklearn.preprocessing import MinMaxScaler
 # --- Initialize models ---
 embedder = SentenceTransformer("sentence-transformers/all-mpnet-base-v2")
 
-# --- Connect to persistent Qdrant Cloud ---
-qdrant = QdrantClient(
-    url="https://bc7fde05-251b-4940-b11a-683326ab9396.europe-west3-0.gcp.cloud.qdrant.io",
-    api_key="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJtIn0.CTZmywE4q_bNllGjFY5_ILpWDulZxyvrINCL15v7LVM"
-)
+# Initialize Qdrant client
+import os
+from qdrant_client import QdrantClient
+
+# Read from environment variables
+QDRANT_URL = os.getenv("url")
+QDRANT_API_KEY = os.getenv("api_key")
+
+# Initialize Qdrant client
+qdrant = QdrantClient(url=QDRANT_URL, api_key=QDRANT_API_KEY)
 
 collection_name = "documents"
 
