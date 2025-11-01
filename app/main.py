@@ -148,11 +148,4 @@ def hybrid_endpoint(request: QueryRequest):
     return {"method": "hybrid", "results": hybrid_results}
 
 
-# --- Run with ngrok ---
-public_url = ngrok.connect(8000)
-print("Public URL:", public_url)
 
-# Use uvicorn.Server to run within the existing event loop
-config = uvicorn.Config(app, host="0.0.0.0", port=8000, log_level="info")
-server = uvicorn.Server(config)
-asyncio.run(server.serve())
