@@ -1,21 +1,17 @@
-import nest_asyncio, uvicorn
 from fastapi import FastAPI, File, UploadFile, Form
 from fastapi.responses import JSONResponse
 from datetime import datetime
-from pyngrok import ngrok
 import os, uuid, fitz, pytesseract
 from PIL import Image
 from qdrant_client import QdrantClient
 from qdrant_client.http import models
 from pydantic import BaseModel
+from transformers import pipeline
 from sentence_transformers import SentenceTransformer
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from modules.query import dense_search, sparse_search, hybrid_search
 
-import asyncio # Import asyncio
 
-# --- Allow async event loop reuse in Colab ---
-nest_asyncio.apply()
 
 # --- Initialize components ---
 app = FastAPI(title="Multimodal RAG API")
@@ -23,7 +19,7 @@ embedder = SentenceTransformer("sentence-transformers/all-mpnet-base-v2")
 
 # Initialize Qdrant client
 import os
-from qdrant_client import QdrantClient
+
 
 # Read from environment variables
 QDRANT_URL = os.getenv("url")
