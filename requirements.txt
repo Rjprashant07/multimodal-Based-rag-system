@@ -8,6 +8,7 @@ pytesseract
 pymupdf
 Pillow
 langchain
+langchain-text-splitters
 transformers
 torch
 nest_asyncio

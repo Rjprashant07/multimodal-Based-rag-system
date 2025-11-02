@@ -7,7 +7,7 @@ from qdrant_client import QdrantClient
 from qdrant_client.models import PointStruct
 from datetime import datetime
 from modules.query import initialize_bm25
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 import uuid
 
 # --- Initialize models ---

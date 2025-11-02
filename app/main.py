@@ -8,7 +8,7 @@ from qdrant_client.http import models
 from pydantic import BaseModel
 from transformers import pipeline
 from sentence_transformers import SentenceTransformer
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from modules.query import dense_search, sparse_search, hybrid_search
 
 
@@ -152,4 +152,7 @@ def hybrid_endpoint(request: QueryRequest):
     return {"method": "hybrid", "results": hybrid_results}
 
 
+@app.get("/")
+def root():
+    return {"status": "ok", "message": "RAG API running on Render!"}
 
