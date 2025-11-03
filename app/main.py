@@ -9,7 +9,8 @@ from pydantic import BaseModel
 from transformers import pipeline
 from sentence_transformers import SentenceTransformer
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from modules.query import dense_search, sparse_search, hybrid_search
+from app.modules.query import dense_search, sparse_search, hybrid_search
+
 
 
 
@@ -156,3 +157,6 @@ def hybrid_endpoint(request: QueryRequest):
 def root():
     return {"status": "ok", "message": "RAG API running on Render!"}
 
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("app.main:app", host="0.0.0.0", port=int(os.getenv("PORT", 8000)))
