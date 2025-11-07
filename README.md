@@ -17,10 +17,11 @@ This is a FastAPI-based Retrieval-Augmented Generation (RAG) system that integra
 - 🛠 **Modular architecture** — easy to extend for new modalities
 
 ## 🧩 Project Structure
-'''plaintext
+
+```plaintext
 app/
 ├── main.py              # FastAPI application entry point
-| init.py
+├── __init__.py          # Makes 'app' a package
 ├── modules/
 │   ├── ingest.py        # Handles file ingestion, chunking, and embedding
 │   ├── query.py         # Performs dense, sparse, and hybrid searches
@@ -31,50 +32,57 @@ app/
 
 
 
-##
-        ┌─────────────────────────────┐
-        │          User Query         │
-        └──────────────┬──────────────┘
-                       │
-                       ▼
-           ┌────────────────────────┐
-           │  Embedding Generator   │
-           │ (Sentence Transformers)│
-           └────────────┬───────────┘
-                        │
-                        ▼
-             ┌──────────────────┐
-             │   Qdrant Vector   │
-             │     Database      │
-             └────────┬──────────┘
-                      │
-                      ▼
-             ┌──────────────────┐
-             │  Context Builder  │
-             │   (LangChain)     │
-             └────────┬──────────┘
-                      │
-                      ▼
-             ┌──────────────────┐
-             │  Generator Model  │
-             │     (Flan-T5)     │
-             └──────────────────┘
+---
 
+## 🧠 System Architecture
 
-##
-
+    ┌─────────────────────────────┐
+    │          User Query         │
+    └──────────────┬──────────────┘
+                   │
+                   ▼
+       ┌────────────────────────┐
+       │  Embedding Generator   │
+       │ (Sentence Transformers)│
+       └────────────┬───────────┘
+                    │
+                    ▼
+         ┌──────────────────┐
+         │   Qdrant Vector   │
+         │     Database      │
+         └────────┬──────────┘
+                  │
+                  ▼
+         ┌──────────────────┐
+         │  Context Builder  │
+         │   (LangChain)     │
+         └────────┬──────────┘
+                  │
+                  ▼
+         ┌──────────────────┐
+         │  Generator Model │
+         │     (Flan-T5)    │
+         └──────────────────┘
 
 
 
 ## 🛠 Installation
-```bash
-git clone <https://github.com/Rjprashant07/multimodal-Based-rag-system.git>
+
+Follow these steps to set up and run the project locally:
+
+# Clone the repository
+git clone https://github.com/Rjprashant07/multimodal-Based-rag-system.git
+
+# Navigate to the project directory
 cd app
+
+# Install dependencies
 pip install -r requirements.txt
+
 
 
 
 
  
 
----
+
