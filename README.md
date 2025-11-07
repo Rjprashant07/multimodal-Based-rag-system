@@ -17,7 +17,7 @@ This is a FastAPI-based Retrieval-Augmented Generation (RAG) system that integra
 - 🛠 **Modular architecture** — easy to extend for new modalities
 
 ## 🧩 Project Structure
-''' plain text
+'''
 app/
 ├── main.py              # FastAPI application entry point
 | init.py
@@ -61,7 +61,7 @@ app/
              └──────────────────┘
 
 
-
+##
 
 
 
