@@ -17,7 +17,7 @@ This is a FastAPI-based Retrieval-Augmented Generation (RAG) system that integra
 - 🛠 **Modular architecture** — easy to extend for new modalities
 
 ## 🧩 Project Structure
-'''
+'''plaintext
 app/
 ├── main.py              # FastAPI application entry point
 | init.py
@@ -75,11 +75,6 @@ pip install -r requirements.txt
 
 
 
+ 
 
 ---
-👨‍💻 Author
-
-rjprashant07
-🔗 GitHub
-
-📧 prashantranjan1999@gmail.com
